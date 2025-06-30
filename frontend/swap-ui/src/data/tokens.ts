@@ -9,7 +9,10 @@ export const tokenIcons: Record<string, string> = {
   usdc: 'usdc.svg',
   usdt: 'usdt.svg',
   wsol: 'wsol.svg',
-  wneon: 'wneon.svg'
+  wneon: 'wneon.svg',
+  good: 'token.svg',
+  web3: 'neon.svg',
+  gift: 'gift.svg'
 };
 
 export function tokens(env: string): { swap: any, tokensV1: CSPLToken[], tokensV2: CSPLToken[] } {

@@ -15,6 +15,7 @@ import {
   transferTokenToNeonTransactionData,
   transferTokenToSolanaTransactionData
 } from '../api/swap';
+import '../layout/layout.css';
 
 function App() {
   const tabs: UITab[] = [
@@ -31,27 +32,18 @@ function App() {
     const approveSwapTransaction = approveTokensForSwapTransactionData(params);
     const swapTransaction = pancakeSwapTransactionData(params);
     const transferSolanaTransaction = await transferTokenToSolanaTransactionData(params);
-    return [
-      claimTransaction,
-      approveSwapTransaction,
-      swapTransaction,
-      transferSolanaTransaction
-    ];
+    return [claimTransaction, approveSwapTransaction, swapTransaction, transferSolanaTransaction];
   };
 
   const v2DataMethod = async (params: SwapTokenData): Promise<TransactionData[]> => {
     const approveSwapTransaction = approveTokensForSwapTransactionData(params);
     const swapTransaction = pancakeSwapTransactionData(params);
-    return [
-      approveSwapTransaction,
-      swapTransaction
-    ];
+    return [approveSwapTransaction, swapTransaction];
   };
 
   const handleSelect = (tab: UITab): void => {
-    setTab(_ => tab);
+    setTab((_) => tab);
   };
-
 
   useEffect(() => {
     getWalletBalance().catch(console.log);
@@ -60,19 +52,32 @@ function App() {
   return (
     <>
       <Layout>
-        <div className="max-w-[624px]">
+        <div className='max-w-[624px]'>
           <FormTabs tabs={tabs} tab={tab} selectTab={handleSelect}></FormTabs>
-          {tab.id === 0 && <SwapForm tokensList={addresses.tokensV1}
-                                     dataMethod={v1DataMethod}
-                                     approveMethod={approveTokenV1Instruction}></SwapForm>}
-          {tab.id === 1 && <SwapForm tokensList={addresses.tokensV1}
-                                     dataMethod={v2DataMethod}
-                                     approveMethod={approveTokenV2Instruction}></SwapForm>}
-          {tab.id === 2 && <SwapForm tokensList={addresses.tokensV2}
-                                     dataMethod={v2DataMethod}
-                                     approveMethod={approveTokenV2Instruction}></SwapForm>}
+          {tab.id === 0 && (
+            <SwapForm
+              tokensList={addresses.tokensV1}
+              dataMethod={v1DataMethod}
+              approveMethod={approveTokenV1Instruction}
+            ></SwapForm>
+          )}
+          {tab.id === 1 && (
+            <SwapForm
+              tokensList={addresses.tokensV1}
+              dataMethod={v2DataMethod}
+              approveMethod={approveTokenV2Instruction}
+            ></SwapForm>
+          )}
+          {tab.id === 2 && (
+            <SwapForm
+              tokensList={addresses.tokensV2}
+              dataMethod={v2DataMethod}
+              approveMethod={approveTokenV2Instruction}
+            ></SwapForm>
+          )}
         </div>
       </Layout>
+      <div className='gw3-badge'>Powered by GoodnessOnWeb3</div>
     </>
   );
 }

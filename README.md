@@ -1,3 +1,114 @@
+# GoodnessOnWeb3 — Neon Solana Native Swap Demo (Customized)
+
+## ✨ About This Customization
+
+This project is a creative fork and rebranding of the Neon EVM Solana-native swap demo, tailored for the **GoodnessOnWeb3** brand. It demonstrates seamless token swaps using a Solana wallet on Neon EVM, with custom tokens, liquidity pools, a modern branded UI, and automated backend/frontend token sync.
+
+---
+
+## 🚀 Customizations & Enhancements
+
+### 1. **Token Customization**
+- Deployed three new tokens:
+  - **Goodness Token** (`GOOD`)
+  - **Web3 Power** (`WEB3`)
+  - **Gift Token** (`GIFT`)
+- Updated all token names, symbols, and icons in both backend and frontend.
+
+### 2. **Liquidity Pool Configuration**
+- Created new pools:
+  - `GOOD/WEB3` (5000/10000)
+  - `GOOD/GIFT` (3000/6000)
+- Pools initialized with custom ratios for demo clarity.
+
+### 3. **Frontend UI Branding**
+- Modern, web3-inspired color palette and gradients.
+- Custom token icons and names.
+- Footer and header now feature:
+  - **GoodnessOnWeb3** branding
+  - Social links:
+    - [GitHub (Org)](https://github.com/Goodnesmbakara)
+    - [Discord: @goodnessmbakara](https://discord.com/users/goodnessmbakara)
+    - [Twitter](https://twitter.com/Goodnesmbakara)
+- "Powered by GoodnessOnWeb3" badge in the UI.
+- Enhanced buttons, tabs, and token selection for a premium feel.
+
+### 4. **Automated Token Sync**
+- Added a script (`scripts/sync-frontend-tokens.js`) to automatically sync deployed token addresses from backend to frontend config.
+- Ensures frontend always displays the correct, deployed tokens after each deployment.
+
+### 5. **.env, Hardhat, and Wallet Config**
+- All environment and wallet configs are valid and documented for easy setup.
+
+---
+
+## 🟢 Results
+
+- **Swap functionality tested and working!**
+- Example successful transactions:
+  - [0xc93264105abe9c80adcb2d5a6cfec6b83b35483a4fc132e28e30668991f1c864](https://neon-devnet.blockscout.com/tx/0xc93264105abe9c80adcb2d5a6cfec6b83b35483a4fc132e28e30668991f1c864)
+  - [0xe01b16d0b89555e0db51403f5d73c6750d1208506fc91bb172474516c45e5d9f](https://neon-devnet.blockscout.com/tx/0xe01b16d0b89555e0db51403f5d73c6750d1208506fc91bb172474516c45e5d9f)
+- No breaking changes—core swap logic and contract interactions remain fully functional.
+- Automated token sync ensures frontend and backend are always in sync.
+
+---
+
+## 👤 Branding & Socials
+
+- **Brand:** GoodnessOnWeb3
+- **Twitter:** [@Goodnesmbakara](https://twitter.com/Goodnesmbakara)
+- **GitHub (Org):** [@Goodnesmbakara](https://github.com/Goodnesmbakara)
+- **Discord:** [@goodnessmbakara](https://discord.com/users/goodnessmbakara)
+
+---
+
+## 🛠️ How to Use (Custom Flow)
+
+1. **Install dependencies**
+   ```bash
+   cd pancakeswap && npm install
+   cd ../frontend/swap-ui && yarn install
+   ```
+
+2. **Configure environment**
+   - Copy `.env.example` to `.env` in both `pancakeswap` and `frontend/swap-ui`
+   - Fill in your Solana wallet and RPC details
+
+3. **Deploy tokens and pools**
+   ```bash
+   cd pancakeswap
+   npx hardhat run scripts/deploy-tokens.js --network curvestand
+   npx hardhat run scripts/create-liquidity-pools.js --network curvestand
+   ```
+
+4. **Sync frontend tokens**
+   ```bash
+   node ../scripts/sync-frontend-tokens.js
+   ```
+
+5. **Run the frontend**
+   ```bash
+   cd ../frontend/swap-ui
+   yarn start
+   ```
+
+6. **Connect your Solana wallet** and swap custom tokens on Neon EVM!
+
+---
+
+## 📚 References
+
+- [Neon EVM Solana Native SDK](https://neonevm.org/docs/composability/sdk_solana_native)
+- [Using SPL Tokens on Neon](https://neonevm.org/docs/composability/using_spl_tokens)
+- [Transfer SOLs with Composability](https://neonevm.org/docs/composability/using_composability/transfer_sols)
+- [Neon Solana Native Swap Demo (GitHub)](https://github.com/neonlabsorg/neon-solana-native-swap-demo/tree/main)
+
+---
+
+**For questions, reach out on [Twitter](https://twitter.com/Goodnesmbakara), [GitHub](https://github.com/Goodnesmbakara), or Discord (@goodnessmbakara)!**
+
+---
+
 # Neon Solana Native Swap Demo
 
 A demonstration of token swaps in Neon EVM using Solana signature verification, showcasing how users with Solana wallets can interact with EVM smart contracts on Neon EVM.

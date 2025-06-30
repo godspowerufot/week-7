@@ -18,23 +18,8 @@ async function main() {
     console.log('\nPancakeFactory contract address:' + config.pancakeFactory[network.name]);
     console.log('\nPancakeRouter contract address:' + config.pancakeRouter[network.name]);
 
-    let tokenAKey = 'WNEON';
-    let tokenBKey = 'token_A';
-    if (config[tokenAKey][network.name] && config[tokenBKey][network.name]) {
-      await createPairAndAddLiquidity(
-        config.pancakeFactory[network.name],
-        config.pancakeRouter[network.name],
-        deployer,
-        config[tokenAKey][network.name],
-        config[tokenBKey][network.name],
-        1000,
-        10000
-      );
-    } else {
-      console.log('\nMissing ' + tokenAKey + ' and/or ' + tokenBKey + ' address(es) in config file');
-    }
-    tokenAKey = 'token_A';
-    tokenBKey = 'token_B';
+    let tokenAKey = 'good_token';
+    let tokenBKey = 'web3_power';
     if (config[tokenAKey][network.name] && config[tokenBKey][network.name]) {
       await createPairAndAddLiquidity(
         config.pancakeFactory[network.name],
@@ -43,7 +28,22 @@ async function main() {
         config[tokenAKey][network.name],
         config[tokenBKey][network.name],
         5000,
-        20000
+        10000
+      );
+    } else {
+      console.log('\nMissing ' + tokenAKey + ' and/or ' + tokenBKey + ' address(es) in config file');
+    }
+    tokenAKey = 'good_token';
+    tokenBKey = 'gift_token';
+    if (config[tokenAKey][network.name] && config[tokenBKey][network.name]) {
+      await createPairAndAddLiquidity(
+        config.pancakeFactory[network.name],
+        config.pancakeRouter[network.name],
+        deployer,
+        config[tokenAKey][network.name],
+        config[tokenBKey][network.name],
+        3000,
+        6000
       );
     } else {
       console.log('\nMissing ' + tokenAKey + ' and/or ' + tokenBKey + ' address(es) in config file');

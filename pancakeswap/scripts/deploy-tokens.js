@@ -33,6 +33,30 @@ async function main() {
     mintAuthority
   );
 
+  await deployERC20ForSPLMintable(
+    'good_token',
+    'Goodness Token',
+    'GOOD',
+    9,
+    mintAuthority
+  );
+
+  await deployERC20ForSPLMintable(
+    'web3_power',
+    'Web3 Power',
+    'WEB3',
+    9,
+    mintAuthority
+  );
+
+  await deployERC20ForSPLMintable(
+    'gift_token',
+    'Gift Token',
+    'GIFT',
+    6,
+    mintAuthority
+  );
+
   console.log('\n');
 }
 
