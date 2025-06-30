@@ -5,7 +5,8 @@
   "scripts": {
     "deploy": "npx hardhat run ./scripts/pancakeswap-demo-setup.js --network curvestand",
     "airdrop": "npx hardhat run ./scripts/mint-tokens.js --network curvestand",
-    "test": "npx hardhat run scripts/transfer-tests.js --network curvestand"
+    "test": "npx hardhat run scripts/transfer-tests.js --network curvestand",
+    "deploy-and-sync": "npx hardhat run scripts/deploy-tokens.js --network curvestand && npx hardhat run scripts/create-liquidity-pools.js --network curvestand && node ../scripts/sync-frontend-tokens.js"
   },
   "author": "maxpolizzo@gmail.com",
   "license": "MIT",
@@ -23,6 +24,7 @@
     "bs58": "^6.0.0",
     "dotenv": "^16.4.7",
     "ethers": "^6.13.5",
-    "hardhat": "^2.22.18"
-  }
+    "hardhat": "^2.25.0"
+  },
+  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
 }
