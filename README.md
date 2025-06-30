@@ -45,11 +45,21 @@ This project is a creative fork and rebranding of the Neon EVM Solana-native swa
 ## 🟢 Results
 
 - **Swap functionality tested and working!**
+- **Deployed Token Addresses (curvestand):**
+  - **Goodness Token (GOOD):**
+    - EVM: `0x01C4601419Dd954c54D6a91a61152522Ab33c29C`
+    - SPL: `7DQwU9cXKE2xMk1Gd14aKwyJEjYugwj4LDp9YrBvRgUK`
+  - **Web3 Power (WEB3):**
+    - EVM: `0x69F95a552f52B5fb853DDd9626BCddEafF48C338`
+    - SPL: `46FeCF1nEasLYYy8amhSYBvUMf5mhABEcHg5CZFHCRUE`
+  - **Gift Token (GIFT):**
+    - EVM: `0xb139A0F88049E8F5342FA9a489cF5c2Ba12765ac`
+    - SPL: `Sr1bdFdKmW4kzrKBnuSQDk3FmLG3j2rCjmDhNverwdf`
 - Example successful transactions:
   - [0xc93264105abe9c80adcb2d5a6cfec6b83b35483a4fc132e28e30668991f1c864](https://neon-devnet.blockscout.com/tx/0xc93264105abe9c80adcb2d5a6cfec6b83b35483a4fc132e28e30668991f1c864)
   - [0xe01b16d0b89555e0db51403f5d73c6750d1208506fc91bb172474516c45e5d9f](https://neon-devnet.blockscout.com/tx/0xe01b16d0b89555e0db51403f5d73c6750d1208506fc91bb172474516c45e5d9f)
 - No breaking changes—core swap logic and contract interactions remain fully functional.
-- Automated token sync ensures frontend and backend are always in sync.
+- **Automated token sync**: The sync script now checks both `pancakeswap/artifacts/deployed-tokens.json` and `pancakeswap/deployed-tokens.json` for maximum robustness.
 
 ---
 

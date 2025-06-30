@@ -1,13 +1,25 @@
 const fs = require('fs');
 const path = require('path');
 
-const deployedTokensPath = path.resolve(__dirname, '../pancakeswap/artifacts/deployed-tokens.json');
-const frontendConfigPath = path.resolve(__dirname, '../frontend/swap-ui/src/data/addresses.curvestand.ts');
+const possiblePaths = [
+  path.resolve(__dirname, '../pancakeswap/artifacts/deployed-tokens.json'),
+  path.resolve(__dirname, '../pancakeswap/deployed-tokens.json')
+];
 
-if (!fs.existsSync(deployedTokensPath)) {
-  console.error('deployed-tokens.json not found. Please deploy tokens first.');
+let deployedTokensPath = null;
+for (const p of possiblePaths) {
+  if (fs.existsSync(p)) {
+    deployedTokensPath = p;
+    break;
+  }
+}
+
+if (!deployedTokensPath) {
+  console.error('deployed-tokens.json not found in artifacts or pancakeswap root. Please deploy tokens first.');
   process.exit(1);
 }
+
+const frontendConfigPath = path.resolve(__dirname, '../frontend/swap-ui/src/data/addresses.curvestand.ts');
 
 const deployed = JSON.parse(fs.readFileSync(deployedTokensPath, 'utf8'));
 let configText = fs.readFileSync(frontendConfigPath, 'utf8');
