@@ -1,23 +1,23 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
+/* Logo & GitHub Link */
 .logo {
-  @apply flex flex-row items-center gap-[8px] text-lg;
+  @apply flex flex-row items-center gap-[8px] text-lg text-[#c9b6fc];
 }
 
 .github-link {
-  @apply flex flex-row items-center gap-[4px] text-gray-700;
-
-  &:hover {
-    @apply text-gray-600;
-  }
+  @apply flex flex-row items-center gap-[4px] text-[#bda9fc];
+}
+.github-link:hover {
+  @apply text-[#e0b3ff];
 }
 
 /* GoodnessOnWeb3 Footer Styles */
 .footer-gw3 {
-  background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
-  border-top: 2px solid #0f3460;
+  background: linear-gradient(90deg, #0a021c 0%, #1a0f33 100%);
+  border-top: 2px solid #7f5af0;
   padding: 24px 0 12px 0;
-  color: #e0e6ed;
+  color: #e3d6fd;
   font-family: 'Inter', sans-serif;
   margin-top: 32px;
 }
@@ -39,74 +39,88 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #e0e6ed;
+  color: #e3d6fd;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
 }
 .footer-link-gw3:hover {
-  color: #00fff1;
+  color: #c084fc;
 }
 .footer-icon-gw3 {
   width: 22px;
   height: 22px;
-  filter: brightness(1.2);
+  filter: brightness(1.4);
 }
 .footer-copy-gw3 {
   font-size: 1rem;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 /* App Background & Accent */
 body {
-  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  background: linear-gradient(135deg, #0a021c 0%, #1a0f33 100%);
   min-height: 100vh;
+  color: #dfccff;
 }
 #root {
   min-height: 100vh;
-  background: repeating-linear-gradient(135deg, rgba(0,255,241,0.03) 0px, rgba(0,255,241,0.03) 2px, transparent 2px, transparent 40px);
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(127, 90, 240, 0.05) 0px,
+    rgba(127, 90, 240, 0.05) 2px,
+    transparent 2px,
+    transparent 40px
+  );
 }
 
 /* Buttons */
-button, .button {
-  background: linear-gradient(90deg, #00fff1 0%, #0f3460 100%);
-  color: #232526;
+button,
+.button {
+  background: linear-gradient(90deg, #7f5af0 0%, #9b5de5 100%);
+  color: #f5f0ff;
   border: none;
   border-radius: 24px;
   padding: 10px 28px;
   font-weight: 600;
   font-size: 1rem;
-  box-shadow: 0 2px 8px rgba(0,255,241,0.08);
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(127, 90, 240, 0.12);
+  transition:
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
   cursor: pointer;
 }
-button:hover, .button:hover {
-  background: linear-gradient(90deg, #0f3460 0%, #00fff1 100%);
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(0,255,241,0.16);
+button:hover,
+.button:hover {
+  background: linear-gradient(90deg, #9b5de5 0%, #7f5af0 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(127, 90, 240, 0.2);
 }
 
 /* Tabs & Forms */
-.tab, .form-input {
+.tab,
+.form-input {
   border-radius: 16px;
-  border: 1px solid #0f3460;
-  background: #232526;
-  color: #e0e6ed;
+  border: 1px solid #9b5de5;
+  background: #1b102a;
+  color: #f1e6ff;
   padding: 8px 16px;
   margin: 4px 0;
 }
 .tab.active {
-  background: #00fff1;
-  color: #232526;
+  background: #c084fc;
+  color: #0a021c;
   font-weight: 700;
 }
 
 /* Token Modal Highlight */
-.token-item.selected, .token-item:hover {
-  background: #00fff1;
-  color: #232526;
+.token-item.selected,
+.token-item:hover {
+  background: #c084fc;
+  color: #0a021c;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,255,241,0.10);
+  box-shadow: 0 2px 8px rgba(155, 93, 229, 0.12);
 }
 
 /* GoodnessOnWeb3 Badge */
@@ -114,13 +128,13 @@ button:hover, .button:hover {
   position: fixed;
   bottom: 80px;
   right: 24px;
-  background: #00fff1;
-  color: #232526;
+  background: #9b5de5;
+  color: #f5f0ff;
   border-radius: 16px 16px 0 16px;
   padding: 8px 18px;
   font-size: 1rem;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0,255,241,0.12);
+  box-shadow: 0 2px 8px rgba(155, 93, 229, 0.2);
   z-index: 100;
   opacity: 0.95;
 }

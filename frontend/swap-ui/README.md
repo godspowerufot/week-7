@@ -7,8 +7,9 @@ yarn install
 yarn dev
 yarn build
 ```
+
 For run tests should add `/tests/.env` (see `/tests/.env.example`)
 
 ```shell
-yarn test
+yarn testrun
 ```

@@ -77,7 +77,7 @@ function App() {
           )}
         </div>
       </Layout>
-      <div className='gw3-badge'>Powered by GoodnessOnWeb3</div>
+      <div className='gw3-badge'>Powered by GodspowerUfot</div>
     </>
   );
 }
