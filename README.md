@@ -13,9 +13,8 @@ This project is a creative fork and rebranding of the Neon EVM Solana-native swa
 ### 1. **Token Customization**
 
 - Three new tokens deployed:
-  - **Godspower Token** (`GOOD`)
-  - **Web3 Power** (`WEB3`)
-  - **Gift Token** (`GIFT`)
+  - (`TOKEN A`)
+  - \*\*\*\* (`TOKEN B`)
 - All token names, symbols, and icons updated in backend and frontend.
 
 ### 2. **Liquidity Pool Configuration**
